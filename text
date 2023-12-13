@@ -1,0 +1,19 @@
+- Arableland
+  - public
+    - Assets
+    - script.js
+    - style.css
+    - index.html
+  - routes
+    - index.js
+    - signup.js
+    - login.js
+    - post.js
+    - view.js
+  - models
+    - User.js
+    - Post.js
+  - controllers
+    - userController.js
+    - postController.js
+  - app.js

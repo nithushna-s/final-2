@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <!-- Add your additional stylesheets and scripts here -->
+</head>
+<body>
+<style>body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+#loginForm, #signupForm {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+}
+
+#signupForm {
+  display: none; /* Hide signup form by default */
+}
+
+h2 {
+  color: #333333;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+label {
+  margin-bottom: 8px;
+  color: #333333;
+}
+
+input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 16px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: #007bff;
+  margin-bottom: 16px;
+  display: block;
+}
+
+button {
+  background-color: #007bff;
+  color: #ffffff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Media Queries for Responsive Design */
+@media screen and (max-width: 600px) {
+  #loginForm, #signupForm {
+    max-width: 100%;
+  }
+}
+</style>
+<!-- Login Form -->
+<div id="loginForm">
+  <h2>Login</h2>
+  <form action="/api/login" method="POST">
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" required>
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required>
+
+    <a href="#" id="forgetPassword">Forget Password?</a>
+
+    <button type="submit">Login</button>
+  </form>
+
+  <button id="joinButton">Join</button>
+</div>
+
+<!-- Signup Form (Hidden by default) -->
+<div id="signupForm" style="display: none;">
+  <h2>Join Us</h2>
+  <form action="/api/signup" method="POST">
+    <label for="newUsername">Username:</label>
+    <input type="text" id="newUsername" name="newUsername" required>
+
+    <label for="newPassword">Password:</label>
+    <input type="password" id="newPassword" name="newPassword" required>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+
+    <button type="submit">Join</button>
+  </form>
+</div>
+
+<script>
+  // JavaScript to toggle between login and signup forms
+  document.getElementById('joinButton').addEventListener('click', function() {
+    document.getElementById('loginForm').style.display = 'none';
+    document.getElementById('signupForm').style.display = 'block';
+  });
+
+  document.getElementById('forgetPassword').addEventListener('click', function() {
+    // Implement logic to handle forgetting password
+    alert('Forget Password functionality not implemented yet!');
+  });
+</script>
+
+</body>
+</html>

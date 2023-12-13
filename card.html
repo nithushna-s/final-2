@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agricultural Land Search</title>
+    <link rel="stylesheet" href="./Assets/Bootstrap/css/bootstrap.min.css">
+    <style>
+        /* Style for the search bar */
+    body{
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    }
+        #searchBar {
+            padding:6px;
+            padding-top: 10px;
+            width: 140px;
+            background-color:#146356 ;
+            
+        }
+
+        .Lands-section {
+            margin: 20px;
+        }
+
+        .card {
+            margin: 10px;
+            display: inline-block;
+            width: 300px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 5px;
+            text-align: center;
+        }
+
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+
+        .title {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 5px;
+            text-align: justify;
+        }
+
+        .lab {
+            margin-top: 10px;
+        }
+
+        #arable{
+        text-align: center;
+        margin-top: 100px;
+        background-color: #c3c0bd;
+        border: groove;
+        width: 50%;
+        padding: 6px;
+        margin-left: 450px;
+        opacity: 1;
+        padding-bottom: 14px;
+        }
+        select {
+            padding: 15px;
+        }
+      .section1{
+        background-image: url(./Assets/image/hreo.jpg);
+        opacity:0.7;
+        height: 600px;
+       padding: 10px;
+       text-align: center;
+       
+      }
+      #head{
+        padding-top: 200px;
+      }
+    </style>
+</head>
+<body>
+     <!-- section1 -->
+     <section>
+        <nav class="navbar navbar-expand-lg  fixed-top ms-5 mx-5">
+          <div class="container-fluid" id="firstul">
+            <a class="navbar-brand "  href="index.html">
+           <img src="./Assets/image/company_logo-removebg-preview.jpg"  alt=""  height="130px" width="140px" >
+            </a>
+            <div class="nav" id="seculli" >
+              <ul class="navbar-nav">
+                <li class="nav-item btn1 active">
+                  <a class="nav-link"  href="index.html">Home</a>
+                </li>
+                <!-- <li class="nav-item btn1">
+                  <a class="nav-link"  href="#aboutus">About</a>
+                </li> -->
+                <li class="nav-item btn1">
+                  <a class="nav-link" href="#pro">Agricultural lands</a>
+                </li>
+                <li class="nav-item btn1">
+                  <a class="nav-link" href="#contactus">Contact Us</a>
+                </li>
+                <li class="nav-item logi">
+                  <a class="nav-link"><button type="button" style=" background-color:#146356; color: white;">login</button></a>
+                </li>
+                <li class="nav-item  post">
+                  <a class="nav-link" href="#contactus"><button type="button" style=" background-color:#146356; color: white;">Post your add</button></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </section>
+    <!-- section2 -->
+<section class="section1"> 
+    <div id="head">
+        <h1>Best Place to Find your Property
+        </h1>
+        <h5>Giving you the high value properties with 100% satisfaction</h5>
+    </div>
+  <div id="arable">
+ <!-- Dropdowns -->
+    <select id="typeDropdown" style="padding-top: 7px;">
+        <option value="">Select Type</option>
+        <option value="Groundnut cropland">Groundnut cropland</option>
+        <option value="Paddy field land">Paddy field land</option>
+        <!-- Add more type options as needed -->
+    </select>
+
+    <select id="districtDropdown" style="padding-top: 7px;">
+        <option value="">Select District</option>
+        <option value="Batticaloa">Batticaloa</option>
+        <option value="Jaffna">Jaffna</option>
+        <option value="Ampara">Ampara</option>
+        <!-- Add more district options as needed -->
+    </select>
+
+    <select id="priceRangeDropdown" style="padding-top:7px;">
+        <option value="">Select Price Range</option>
+        <option value="Rs:20000">Rs:20000</option>
+        <option value="Rs:30000">Rs:30000</option>
+        <!-- Add more price range options as needed -->
+    </select>
+     <!-- Search Bar -->
+     <button onclick="searchAgriculturalLands()" id="searchBar" style="text-align:center; padding-right: 6px; padding-top: 7px; padding-bottom: 7px;  margin-top: 5px;">Search</button>
+ </div>
+</section>
+    <!-- Agriland Section -->
+    <div class=" Lands-section">
+        <h2 style="text-align:center; padding-right: 356px; padding-top: 20px; padding-bottom: 15px;">Agricultural Lands</h2>
+        
+        <!-- First Row -->
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <div class="col">
+                <div class="card" data-type="Groundnut cropland" data-district="Batticaloa" data-price="Rs:20000">
+                    <h2 style="padding-top: 20px; text-align: center; padding-bottom: 5px;">Groundnut cropland</h2>
+                    <img src="./Assets/image/vegetable.jpg" alt="land">
+                    <div class="container">
+                        <p class="title">Acres & 2</p>
+                        <p class="title">price Rs:20000</p>
+                        <p class="title">Iluppadichchenail, pankudaveliy, chenkalady, batticaloa.</p>
+                        <p class="lab"><button type="button" class="btn">View Details</button></p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Add more cards as needed -->
+
+            <div class="col">
+                <div class="card" data-type="Paddy field land" data-district="Batticaloa" data-price="Rs:20000">
+                    <h2 style="padding-top: 20px; text-align: center; padding-bottom: 5px;">Paddy field land</h2>
+                    <img src="./Assets/image/nelvayal.jpeg" alt="land">
+                    <div class="container">
+                        <p class="title">Acres & 2</p>
+                        <p class="title">price Rs:20000</p>
+                        <p class="title">Iluppadichchenail, pankudaveliy, chenkalady, batticaloa.</p>
+                        <p class="lab"><button type="button" class="btn">View Details</button></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card" data-type="Paddy field land" data-district="Batticaloa" data-price="Rs:20000">
+                    <h2 style="padding-top: 20px; text-align: center; padding-bottom: 5px;">Paddy field land</h2>
+                    <img src="./Assets/image/paddy.jpeg" alt="land">
+                    <div class="container">
+                        <p class="title">Acres & 2</p>
+                        <p class="title">price Rs:20000</p>
+                        <p class="title">Iluppadichchenail, pankudaveliy, chenkalady, batticaloa.</p>
+                        <p class="lab"><button type="button" class="btn">View Details</button></p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Second Row -->
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <!-- Add more cards as needed -->
+
+            <div class="col">
+                <div class="card" data-type="Paddy field land" data-district="Batticaloa" data-price="Rs:20000">
+                    <h2 style="padding-top: 20px; text-align: center; padding-bottom: 5px;">Paddy field land</h2>
+                    <img src="./Assets/image/paddy.jpg" alt="land">
+                    <div class="container">
+                        <p class="title">Acres & 2</p>
+                        <p class="title">price Rs:20000</p>
+                        <p class="title">Iluppadichchenail, pankudaveliy, chenkalady, batticaloa.</p>
+                        <p class="lab"><button type="button" class="btn">View Details</button></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card" data-type="Groundnut cropland" data-district="Batticaloa" data-price="Rs:20000">
+                    <h2 style="padding-top: 20px; text-align: center; padding-bottom: 5px;">Groundnut cropland</h2>
+                    <img src="./Assets/image/vegetable.jpg" alt="land">
+                    <div class="container">
+                        <p class="title">Acres & 2</p>
+                        <p class="title">price Rs:20000</p>
+                        <p>Iluppadichchenail, pankudaveliy, chenkalady, batticaloa.</p>
+                        <p class="lab"><button type="button" class="btn">View Details</button></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card" data-type="Groundnut cropland" data-district="Batticaloa" data-price="Rs:20000">
+                    <h2 style="padding-top: 20px; text-align: center; padding-bottom: 5px;">Groundnut cropland</h2>
+                    <img src="./Assets/image/Groundnut cropland.jpg" alt="land">
+                    <div class="container">
+                        <p class="title">Acres & 2</p>
+                        <p class="title">price Rs:20000</p>
+                        <p>Iluppadichchenail, pankudaveliy, chenkalady, batticaloa.</p>
+                        <p class="lab"><button type="button" class="btn">View Details</button></p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        function searchAgriculturalLands() {
+            const searchBar = document.getElementById('searchBar');
+            const searchQuery = searchBar.value.toLowerCase();
+
+            const typeDropdown = document.getElementById('typeDropdown');
+            const selectedType = typeDropdown.value.toLowerCase();
+
+            const districtDropdown = document.getElementById('districtDropdown');
+            const selectedDistrict = districtDropdown.value.toLowerCase();
+
+            const priceRangeDropdown = document.getElementById('priceRangeDropdown');
+            const selectedPriceRange = priceRangeDropdown.value.toLowerCase();
+
+            // Hide all cards initially
+            const agriculturalCards = document.querySelectorAll('.card');
+            agriculturalCards.forEach(card => {
+                card.style.display = 'none';
+            });
+
+            // Show cards that match the search query and dropdown selections
+            agriculturalCards.forEach(card => {
+                const cardText = card.innerText.toLowerCase();
+                const cardType = card.getAttribute('data-type').toLowerCase();
+                const cardDistrict = card.getAttribute('data-district').toLowerCase();
+                const cardPrice = card.getAttribute('data-price').toLowerCase();
+
+                if (
+                    cardText.includes(searchQuery) &&
+                    (selectedType === '' || cardType === selectedType) &&
+                    (selectedDistrict === '' || cardDistrict === selectedDistrict) &&
+                    (selectedPriceRange === '' || cardPrice === selectedPriceRange)
+                ) {
+                    card.style.display = 'inline';
+                }
+            });
+        }
+    </script>
+<script src="./Assets/Bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
